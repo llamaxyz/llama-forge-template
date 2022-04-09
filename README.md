@@ -1,19 +1,28 @@
 # Llama Forge Template
 
-## Setup
+This template is inspired by [Cleanunicorn's template](https://github.com/cleanunicorn/ethereum-smartcontract-template).
 
-- Rename `.env.example` to `.env`. Add a valid URL for an Ethereum JSON-RPC client for the `RPC_URL` variable
-- Follow the [foundry installation instructions](https://github.com/gakonst/foundry#installation)
+It requires [Foundry](https://github.com/gakonst/foundry) installed to run. You can find instructions here [Foundry installation](https://github.com/gakonst/foundry#installation).
 
-```
-$ git clone https://github.com/llama-community/llama-forge-template.git
-$ cd llama-forge-template
+## Installation
+
+### GitHub template
+
+It's easiest to start a new project by clicking the ["Use this template"](https://github.com/llama-community/llama-forge-template).
+
+### Manual installation
+
+If you want to create your project manually, clone the template in a new folder and `cd` into it.
+
+Clone the template, install dependencies and make sure tests work:
+
+```sh
+$ forge init --template https://github.com/llama-community/llama-forge-template my-repo
+$ cd my-repo
 $ npm install
 $ forge install
 ```
 
-## Tests
+## Setup
 
-```
-$ make test
-```
+- Rename `.env.example` to `.env`. Add a valid URL for an Ethereum JSON-RPC client for the `RPC_URL` variable
