@@ -1,0 +1,4 @@
+@ds=lib/ds-test/src/
+@openzeppelin/=lib/openzeppelin-contracts/contracts/
+@std=lib/forge-std/src/
+@solmate=lib/solmate/src/

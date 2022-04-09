@@ -1,12 +1,28 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.10;
+// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity ^0.8.10;
 
-import "ds-test/test.sol";
+// testing libraries
+import "@ds/test.sol";
+import "@std/console.sol";
+import {stdCheats} from "@std/stdlib.sol";
+import {Vm} from "@std/Vm.sol";
+import {DSTestPlus} from "@solmate/test/utils/DSTestPlus.sol";
 
-contract ContractTest is DSTest {
-    function setUp() public {}
+import {Contract} from "../Contract.sol";
 
-    function testExample() public {
-        assertTrue(true);
+contract RouterTest is DSTestPlus, stdCheats {
+    Vm private vm = Vm(HEVM_ADDRESS);
+    Contract public numContract;
+    uint256 public constant originalNumber = 7;
+
+    function setUp() public {
+        numContract = new Contract(originalNumber);
+        vm.label(address(numContract), "Contract");
+    }
+
+    function testSetNum(uint256 x) public {
+        assertEq(numContract.num(), originalNumber);
+        numContract.changeNum(x);
+        assertEq(numContract.num(), x);
     }
 }

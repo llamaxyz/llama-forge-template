@@ -1,2 +1,5 @@
 cache/
 out/
+.env
+.env.prod
+node_modules/
