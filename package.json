@@ -9,8 +9,11 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "make lint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*": "npm run lint"
   },
   "scripts": {
     "setup": "make clean && make build",
@@ -33,6 +36,7 @@
   "homepage": "https://github.com/llama-community/llama-forge-template#readme",
   "devDependencies": {
     "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "prettier": "^2.6.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19"
   }
