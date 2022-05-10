@@ -10,7 +10,7 @@ import {DSTestPlus} from "@solmate/test/utils/DSTestPlus.sol";
 
 import {Contract} from "../Contract.sol";
 
-contract RouterTest is DSTestPlus, stdCheats {
+contract ContractTest is DSTestPlus, stdCheats {
     Vm private vm = Vm(HEVM_ADDRESS);
     Contract public numContract;
     uint256 public constant originalNumber = 7;
