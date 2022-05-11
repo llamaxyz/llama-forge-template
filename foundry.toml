@@ -17,3 +17,8 @@ fuzz_runs = 1_000
 # Extreme Fuzzing CI Profile
 [ci]
 fuzz_runs = 5_000
+
+# Profile For Deployments
+[deploy]
+optimizer = true
+optimizer_runs = 1_000_000
