@@ -4,8 +4,8 @@ then
   export $(cat .env | xargs)
 fi
 
-# Read the Rinkeby RPC URL
-echo Enter Your Rinkeby RPC URL:
+# Read the Testnet RPC URL
+echo Enter your Testnet RPC URL:
 echo Example: "https://eth-rinkeby.alchemyapi.io/v2/XXXXXXXXXX"
 read -s rpc
 
@@ -19,7 +19,7 @@ read -ra args
 
 if [ -z "$args" ]
 then
-  FOUNDRY_PROFILE=deploy forge create -i --rpc-url ${RPC_URL_RINKEBY} ./src/${contract}.sol:${contract}
+  FOUNDRY_PROFILE=deploy forge create -i --rpc-url ${rpc} ./src/${contract}.sol:${contract} --verify
 else
-  FOUNDRY_PROFILE=deploy forge create -i --rpc-url ${RPC_URL_RINKEBY} --constructor-args ${args} ./src/${contract}.sol:${contract}
+  FOUNDRY_PROFILE=deploy forge create -i --rpc-url ${rpc} --constructor-args ${args} ./src/${contract}.sol:${contract} --verify
 fi
