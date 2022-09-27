@@ -3,3 +3,4 @@ out/
 .env
 .env.prod
 node_modules/
+bin/
