@@ -14,7 +14,7 @@ report   :; forge clean && forge test --gas-report | sed -e/╭/\{ -e:1 -en\;b1 
 
 # Deploy and Verify Contract
 deploy-contract :; forge script script/DeployContract.s.sol:DeployContract --rpc-url ${RPC_MAINNET_URL} --broadcast --private-key ${PRIVATE_KEY} --verify --etherscan-api-key ${ETHERSCAN_API_KEY} -vvvv
-verify-payload :; forge script script/DeployContract.s.sol:DeployContract --rpc-url ${RPC_MAINNET_URL} --verify --etherscan-api-key ${ETHERSCAN_API_KEY} -vvvv
+verify-contract :; forge script script/DeployContract.s.sol:DeployContract --rpc-url ${RPC_MAINNET_URL} --verify --etherscan-api-key ${ETHERSCAN_API_KEY} -vvvv
 
 # Clean & lint
 clean    :; forge clean
