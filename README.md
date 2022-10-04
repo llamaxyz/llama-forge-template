@@ -4,7 +4,7 @@ This template is inspired by [Cleanunicorn's template](https://github.com/cleanu
 
 ## Installation
 
-It requires [Foundry](https://github.com/gakonst/foundry) installed to run. You can find instructions here [Foundry installation](https://github.com/gakonst/foundry#installation).
+It requires [Foundry](https://github.com/foundry-rs/foundry) installed to run. You can find instructions here [Foundry installation](https://book.getfoundry.sh/getting-started/installation).
 
 ### GitHub template
 
@@ -15,6 +15,8 @@ Then clone the templated repository locally and `cd` into it and run the followi
 ```sh
 $ npm install
 $ forge install
+$ forge update
+$ git submodule update --init --recursive
 ```
 
 ### Manual installation
@@ -26,14 +28,16 @@ $ forge init --template https://github.com/llama-community/llama-forge-template 
 $ cd <my-repo>
 $ npm install
 $ forge install
+$ forge update
+$ git submodule update --init --recursive
 ```
 
 ## Setup
 
 Duplicate `.env.example` and rename to `.env`:
 
-- Add a valid mainnet URL for an Ethereum JSON-RPC client for the `RPC_URL` variable.
-- Add the latest mainnet block number for the `BLOCK_NUMBER` variable.
+- Add a valid mainnet URL for an Ethereum JSON-RPC client for the `RPC_MAINNET_URL` variable.
+- Add a valid Private Key for the `PRIVATE_KEY` variable.
 - Add a valid Etherscan API Key for the `ETHERSCAN_API_KEY` variable.
 
 ### Commands
@@ -44,7 +48,6 @@ Duplicate `.env.example` and rename to `.env`:
 
 ### Deploy and Verify
 
-- `Mainnet`: When you're ready to deploy and verify, run `./scripts/deploy_verify_mainnet.sh` and follow the prompts.
-- `Testnet`: When you're ready to deploy and verify, run `./scripts/deploy_verify_testnet.sh` and follow the prompts.
+- `make deploy-contract` - deploy and verify contract on mainnet
 
 To confirm the deploy was successful, re-run your test suite but use the newly created contract address.

@@ -3,4 +3,5 @@ out/
 .env
 .env.prod
 node_modules/
+broadcast/
 bin/
