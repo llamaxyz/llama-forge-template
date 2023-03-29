@@ -6,8 +6,19 @@ optimizer = true
 optimizer_runs = 200
 libs = ['lib']
 src = 'src'
-test = 'test'
+test = 'tests'
 out = 'out'
 
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET_URL}"
+
+[fmt]
+bracket_spacing = false
+int_types = "long"
+line_length = 120
+multiline_func_header = "attributes_first"
+number_underscore = "thousands"
+quote_style = "double"
+single_line_statement_blocks = "single"
+tab_width = 2
+wrap_comments = true

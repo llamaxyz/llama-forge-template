@@ -5,7 +5,7 @@ pragma solidity ^0.8.15;
 import "@forge-std/Test.sol";
 
 // contract dependencies
-import {Contract} from "../Contract.sol";
+import {Contract} from "../src/Contract.sol";
 
 contract ContractTest is Test {
     Contract public numContract;
