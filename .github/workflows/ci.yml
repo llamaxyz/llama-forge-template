@@ -4,7 +4,6 @@ on: [pull_request]
 
 env:
   RPC_URL: ${{ secrets.RPC_URL }}
-  BLOCK_NUMBER: ${{ secrets.BLOCK_NUMBER }}
 
 jobs:
   build:

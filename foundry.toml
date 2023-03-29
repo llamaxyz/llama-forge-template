@@ -8,7 +8,6 @@ libs = ['lib']
 src = 'src'
 test = 'tests'
 out = 'out'
-bytecode_hash = 'none'
 
 [rpc_endpoints]
 mainnet = "${RPC_MAINNET_URL}"
